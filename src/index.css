@@ -219,35 +219,35 @@ body {
   margin-left: 12px;
 }
 .mainbthr th {
-  padding-left: 15px;
+  /* padding-left: 15px; */
   font-size: 14px;
   font-weight: 600;
 }
 .mainbtbr td {
-  padding-left: 17px;
+  /* padding-left: 17px; */
   font-size: 13px;
 }
 table {
   border-collapse: separate;
   border-spacing: 0 8px;
 }
-.mainbtb tr{
+.mainbtb tr {
   height: 53px;
 }
-.mainbrd span{
+.mainbrd span {
   display: flex;
+  width: fit-content;
 }
-.mainbrd span img{
+.mainbrd span img {
   width: 21px;
   height: 21px;
   margin-right: 3px;
 }
-.activep{
+.activep {
   color: #129e00;
   font-weight: 500;
 }
-.actived{
+.actived {
   color: red;
   font-weight: 500;
 }
-

@@ -194,20 +194,20 @@ function App() {
             </div>
             <div className="mainbs">
               <table className="mainbtab" cellSpacing="0">
-                <thead style={{padding:'10px'}} className="mainbth">
+                <thead className="mainbth">
                   <tr className="mainbthr">
-                    <th>Customer Name</th>
-                    <th>GST Number</th>
-                    <th>STATUS</th>
-                    <th>TOTAL INVOICES</th>
-                    <th>TOTAL INVOICES DUE</th>
-                    <th>ACTIONS</th>
+                    <th align="left">Customer Name</th>
+                    <th align="center">GST Number</th>
+                    <th align="center">STATUS</th>
+                    <th align="center">TOTAL INVOICES</th>
+                    <th align="center">TOTAL INVOICES DUE</th>
+                    <th align="center">ACTIONS</th>
                   </tr>
                 </thead>
                 <tbody className="mainbtb">
                   {slicedData.map((item,index)=>(
                     <tr key={index} className="mainbtbr">
-                    <td className="mainbrd">
+                    <td align="left" className="mainbrd">
                       <span className="mainbrdf">
                         <div className="mainbrdfi">
                         <img className="mainbimg" src={item.image}/>
@@ -218,16 +218,16 @@ function App() {
                         </div>
                       </span>
                     </td>
-                    <td className="mainbrd">{item.bank.cardNumber}</td>
-                    <td className="mainbrd">
+                    <td align="center" className="mainbrd">{item.bank.cardNumber}</td>
+                    <td align="center" className="mainbrd">
                       <span>
                       <img src={checkmark}/>
                       <p className="activep">Active</p>
                       </span>
                     </td>
-                    <td className="mainbrd">&#8377; {item.address.postalCode}</td>
-                    <td className="mainbrd">&#8377; {item.height}</td>
-                    <td className="mainbrd">
+                    <td align="center" className="mainbrd">&#8377; {item.address.postalCode}</td>
+                    <td align="center" className="mainbrd">&#8377; {item.height}</td>
+                    <td align="center" className="mainbrd">
                     <span>
                       <img src={deletes}/>
                       <p className="actived">Delete</p>
