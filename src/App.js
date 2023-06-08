@@ -26,6 +26,7 @@ function App() {
     report: false,
   });
   const [data, setData] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
   const onActive = (value) => {
     if (value === "dashboard") {
@@ -100,6 +101,13 @@ function App() {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
   };
 
   useEffect(() => {
@@ -190,7 +198,9 @@ function App() {
           <div className="mainb">
             <div className="mainbf">
               <h2 className="mainbfh">Customer List</h2>
-              <button className="mainbfb">Add Customer</button>
+              <button className="mainbfb" onClick={openModal}>
+                Add Customer
+              </button>
             </div>
             <div className="mainbs">
               <table className="mainbtab" cellSpacing="0">
@@ -205,59 +215,63 @@ function App() {
                   </tr>
                 </thead>
                 <tbody className="mainbtb">
-                  {slicedData.map((item,index)=>(
+                  {slicedData.map((item, index) => (
                     <tr key={index} className="mainbtbr">
-                    <td align="left" className="mainbrd">
-                      <span className="mainbrdf">
-                        <div className="mainbrdfi">
-                        <img className="mainbimg" src={item.image}/>
-                        </div>
-                        <div className="mainbrdfc">
-                          <h2>{item.firstName} {item.lastName}</h2>
-                          <span>{item.email}</span>
-                        </div>
-                      </span>
-                    </td>
-                    <td align="center" className="mainbrd">{item.bank.cardNumber}</td>
-                    <td align="center" className="mainbrd">
-                      <span>
-                      <img src={checkmark}/>
-                      <p className="activep">Active</p>
-                      </span>
-                    </td>
-                    <td align="center" className="mainbrd">&#8377; {item.address.postalCode}</td>
-                    <td align="center" className="mainbrd">&#8377; {item.height}</td>
-                    <td align="center" className="mainbrd">
-                    <span>
-                      <img src={deletes}/>
-                      <p className="actived">Delete</p>
-                      </span>
-                    </td>
-                  </tr>
+                      <td align="left" className="mainbrd">
+                        <span className="mainbrdf">
+                          <div className="mainbrdfi">
+                            <img className="mainbimg" src={item.image} />
+                          </div>
+                          <div className="mainbrdfc">
+                            <h2>
+                              {item.firstName} {item.lastName}
+                            </h2>
+                            <span>{item.email}</span>
+                          </div>
+                        </span>
+                      </td>
+                      <td align="center" className="mainbrd">
+                        {item.bank.cardNumber}
+                      </td>
+                      <td align="center" className="mainbrd">
+                        <span>
+                          <img src={checkmark} />
+                          <p className="activep">Active</p>
+                        </span>
+                      </td>
+                      <td align="center" className="mainbrd">
+                        &#8377; {item.address.postalCode}
+                      </td>
+                      <td align="center" className="mainbrd">
+                        &#8377; {item.height}
+                      </td>
+                      <td align="center" className="mainbrd">
+                        <span>
+                          <img src={deletes} />
+                          <p className="actived">Delete</p>
+                        </span>
+                      </td>
+                    </tr>
                   ))}
-                  
                 </tbody>
               </table>
-              {/* <div className="list-head">
-                <th>Customer Name</th>
-                <th>GST Number</th>
-                <th>STATUS</th>
-                <th>TOTAL INVOICES</th>
-                <th>TOTAL INVOICES DUE</th>
-                <th>ACTIONS</th>
-              </div>
-              <div className="list-body">
-                <td>anshu</td>
-                <td>anshu</td>
-                <td>anshu</td>
-                <td>anshu</td>
-                <td>anshu</td>
-                <td>anshu</td>
-              </div> */}
             </div>
             <div className="mainbt"></div>
           </div>
         </div>
+        {isOpen && (
+          <div className="modal-overlay">
+            <div className="modal-content">
+              <h2>Add Customer</h2>
+              <div className="modal-form">
+              <input placeholder="First name"/>
+              <input placeholder="Last name"/>
+              <input placeholder="Age"/>
+              </div>
+              <button onClick={closeModal}>Add</button>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
