@@ -169,7 +169,7 @@ body {
 .mainbf {
   display: flex;
   justify-content: space-between;
-  height: 78px;
+  height: 56px;
 }
 .mainbfb {
   height: 35px;
@@ -188,6 +188,7 @@ body {
   font-weight: 600;
   font-size: 18px;
 }
+
 .mainbtab {
   width: -webkit-fill-available;
 }
@@ -214,18 +215,29 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.mainbs {
-  padding: 15px;
-}
 .mainbrdfc {
   margin-left: 12px;
 }
 .mainbthr th {
   padding-left: 15px;
+  font-size: 14px;
+  font-weight: 600;
 }
 .mainbtbr td {
   padding-left: 17px;
 }
-.mainbtbr {
+table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+.mainbtb tr{
   height: 53px;
 }
+
+/* .mainbs{
+  margin-top: 20px;
+}
+.list-head {
+  display: flex;
+  justify-content: space-around;
+} */

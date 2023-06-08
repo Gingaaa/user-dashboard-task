@@ -106,7 +106,7 @@ function App() {
     fetchData();
   }, []);
 
-  const slicedData = data.slice(0, 9);
+  const slicedData = data.slice(0, 8);
 
   return (
     <>
@@ -193,7 +193,7 @@ function App() {
               <button className="mainbfb">Add Customer</button>
             </div>
             <div className="mainbs">
-              <table className="mainbtab">
+              <table className="mainbtab" cellSpacing="0">
                 <thead style={{padding:'10px'}} className="mainbth">
                   <tr className="mainbthr">
                     <th>Customer Name</th>
@@ -228,6 +228,22 @@ function App() {
                   
                 </tbody>
               </table>
+              {/* <div className="list-head">
+                <th>Customer Name</th>
+                <th>GST Number</th>
+                <th>STATUS</th>
+                <th>TOTAL INVOICES</th>
+                <th>TOTAL INVOICES DUE</th>
+                <th>ACTIONS</th>
+              </div>
+              <div className="list-body">
+                <td>anshu</td>
+                <td>anshu</td>
+                <td>anshu</td>
+                <td>anshu</td>
+                <td>anshu</td>
+                <td>anshu</td>
+              </div> */}
             </div>
             <div className="mainbt"></div>
           </div>
