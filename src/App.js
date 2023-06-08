@@ -9,12 +9,12 @@ import shop from "./assets/images/shop-bag.png";
 import setting from "./assets/images/setting (1).png";
 import file from "./assets/images/file.png";
 import bell from "./assets/images/bell (1).png";
-import checkbox from "./assets/images/checkbox.png";
 import checkmark from "./assets/images/checkmark.png";
 import down from "./assets/images/down.png";
 import search from "./assets/images/search (1).png";
 import next from "./assets/images/next.png";
 import selfie from "./assets/images/selfie6.jpg";
+import deletes from "./assets/images/delete.png";
 
 function App() {
   const [activec, setActivec] = useState({
@@ -219,10 +219,20 @@ function App() {
                       </span>
                     </td>
                     <td className="mainbrd">{item.bank.cardNumber}</td>
-                    <td className="mainbrd">New York</td>
-                    <td className="mainbrd">New York</td>
-                    <td className="mainbrd">New York</td>
-                    <td className="mainbrd">New York</td>
+                    <td className="mainbrd">
+                      <span>
+                      <img src={checkmark}/>
+                      <p className="activep">Active</p>
+                      </span>
+                    </td>
+                    <td className="mainbrd">&#8377; {item.address.postalCode}</td>
+                    <td className="mainbrd">&#8377; {item.height}</td>
+                    <td className="mainbrd">
+                    <span>
+                      <img src={deletes}/>
+                      <p className="actived">Delete</p>
+                      </span>
+                    </td>
                   </tr>
                   ))}
                   

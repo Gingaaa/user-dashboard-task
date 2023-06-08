@@ -225,6 +225,7 @@ body {
 }
 .mainbtbr td {
   padding-left: 17px;
+  font-size: 13px;
 }
 table {
   border-collapse: separate;
@@ -233,11 +234,20 @@ table {
 .mainbtb tr{
   height: 53px;
 }
-
-/* .mainbs{
-  margin-top: 20px;
-}
-.list-head {
+.mainbrd span{
   display: flex;
-  justify-content: space-around;
-} */
+}
+.mainbrd span img{
+  width: 21px;
+  height: 21px;
+  margin-right: 3px;
+}
+.activep{
+  color: #129e00;
+  font-weight: 500;
+}
+.actived{
+  color: red;
+  font-weight: 500;
+}
+
