@@ -27,6 +27,9 @@ function App() {
   });
   const [data, setData] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [fname, setFname] = useState("");
+  const [lname, setlname] = useState("");
+  const [age, setAge] = useState("");
 
   const onActive = (value) => {
     if (value === "dashboard") {
@@ -103,10 +106,37 @@ function App() {
     }
   };
 
+  const handleName = (event) => {
+    setFname(event.target.value);
+  };
+  const handleLname = (event) => {
+    setlname(event.target.value);
+  };
+  const handleAge = (event) => {
+    setAge(event.target.value);
+  };
+
   const openModal = () => {
     setIsOpen(true);
   };
-  const closeModal = () => {
+  const closeModal = (event) => {
+    event.preventDefault();
+
+    const data = {
+      firstName: fname,
+      lastName: lname,
+      age: age,
+    };
+
+    axios
+      .post("https://dummyjson.com/users", data)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
     setIsOpen(false);
   };
 
@@ -262,13 +292,23 @@ function App() {
         {isOpen && (
           <div className="modal-overlay">
             <div className="modal-content">
-              <h2>Add Customer</h2>
-              <div className="modal-form">
-              <input placeholder="First name"/>
-              <input placeholder="Last name"/>
-              <input placeholder="Age"/>
-              </div>
-              <button onClick={closeModal}>Add</button>
+              <form onSubmit={closeModal}>
+                <h2>Add Customer</h2>
+                <div className="modal-form">
+                  <input
+                    placeholder="First name"
+                    value={fname}
+                    onChange={handleName}
+                  />
+                  <input
+                    placeholder="Last name"
+                    value={lname}
+                    onChange={handleLname}
+                  />
+                  <input placeholder="Age" value={age} onChange={handleAge} />
+                </div>
+                <button>Add</button>
+              </form>
             </div>
           </div>
         )}
