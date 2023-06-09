@@ -307,7 +307,7 @@ function App() {
                   />
                   <input placeholder="Age" value={age} onChange={handleAge} />
                 </div>
-                <button>Add</button>
+                <button type="submit">Add</button>
               </form>
             </div>
           </div>
