@@ -131,10 +131,8 @@ function App() {
     axios
       .post("https://dummyjson.com/users", data)
       .then((response) => {
-        console.log(response.data);
       })
       .catch((error) => {
-        console.error(error);
       });
 
     setIsOpen(false);
